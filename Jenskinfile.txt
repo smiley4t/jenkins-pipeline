@@ -20,7 +20,7 @@ pipeline {
                     echo 'Sending notification email for Tests stage...'
                     mail to: 'alissatran1108@gmail.com',
                          subject: "Pipeline Status: Tests Stage - ${currentBuild.fullDisplayName}",
-                         body: "Pipeline result for Tests stage: ${currentBuild.result}\nLogs: ${currentBuild.url}console"
+                         body: "Pipeline result for Tests stage: ${currentBuild.result}\nLogs: ${env.BUILD_URL}console"
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
                     echo 'Sending notification email for Security Scan stage...'
                     mail to: 'alissatran1108@gmail.com',
                          subject: "Pipeline Status: Security Scan Stage - ${currentBuild.fullDisplayName}",
-                         body: "Pipeline result for Security Scan stage: ${currentBuild.result}\nLogs: ${currentBuild.url}console"
+                         body: "Pipeline result for Security Scan stage: ${currentBuild.result}\nLogs: ${env.BUILD_URL}console"
                 }
             }
         }
